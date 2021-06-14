@@ -13,9 +13,9 @@ sio = socketio.Client()
 
 sio.connect('{}'.format(API_BASE), namespaces=['/', '{}'.format(NAMESPACE)], headers={'authorization':TOKEN})
 
-sio.emit('status', {'automation':str(name), 'status':str(status)}, namespace='/automations')
+#sio.emit('status', {'automation':str(name), 'status':str(status)}, namespace='/automations')
 #sio.emit('detail', {'automation':str(name), 'detail':{'name':'vpn', 'value':str(status)}}, namespace='/automations')
-#sio.emit('command', {'automation':str(name), 'command':str(status)}, namespace='/automations')
+sio.emit('command', {'automation':str(name), 'command':str(status)}, namespace='/automations')
 #sio.emit('log', {'automation':str(name), 'log':str(status)}, namespace='/automations')
 
 time.sleep(5)
